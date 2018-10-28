@@ -62,7 +62,7 @@ div.evui-checkbox.evui-diabled input[type=checkbox]+label:before{
 
 .evui-checkbox input[type=checkbox]:checked+label:before{
   content: "\2713";
-  color: #fff;
+  color: #c9ffbc;
   background: #2f87c1;
   font-weight: 800;
 }
