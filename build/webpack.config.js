@@ -70,6 +70,8 @@ module.exports = {
             chunks: ['css', 'index', 'app', 'system', 'monitor']
         })
     ],
+    // webpack4 최적화 관련 플러그인이 모두 optimization 속송으로 통합됨
+    // commonsChunkPlugin도 사라지고 이쪽으로 통합됨
     optimization: {
         splitChunks: {
             cacheGroups: {
