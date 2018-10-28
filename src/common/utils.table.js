@@ -1,15 +1,4 @@
 export default {
-  quantity(input) {
-    let output;
-
-    if (typeof input === 'string' || typeof input === 'number') {
-      const match = (/^(normal|(\d+(?:\.\d+)?)(px|%)?)$/).exec(input);
-      output = match ? { value: +match[2], unit: match[3] || undefined } : undefined;
-    } else {
-      output = undefined;
-    }
-    return output;
-  },
 
   /**
    * % 는 퍼센트로 숫자 및 문자 숫자는  px로 이상한값은 0px로 반환
