@@ -14,7 +14,8 @@ module.exports = {
     },
     // output build 결과를 저장하는 경로
     output: {
-        filename: "[name]-bundle.js",
+        filename: "[name].[chunkhash]-bundle.js",
+        chunkFilename: "[id].js",
         path: path.resolve(__dirname, "../dist"),
     },
     devServer: {
@@ -67,18 +68,24 @@ module.exports = {
             title: "Jun Yong",
             filename:'index.html', // 생성되는 파일이름
             template: path.join(__dirname, "../example/index.html"),  //템플릿 파일 이름
-            chunks: ['css', 'index', 'app', 'system', 'monitor']
+            // chunks 속성은 잘모름..
+            // chunks: ['css', 'index', 'app', 'system', 'monitor']
         })
     ],
     // webpack4 최적화 관련 플러그인이 모두 optimization 속송으로 통합됨
     // commonsChunkPlugin도 사라지고 이쪽으로 통합됨
     optimization: {
+        minimize: false, // true / false 예전 webpack3 UgilfyJsPlugin 계승함 대체됨
+        // splitChunks가 CommonsChunkPlugin을 계승함 대체됨
+        // mode가 production이면 자동으로 minimze랑 splitChunks 자동 true
         splitChunks: {
             cacheGroups: {
                 test: /[\\/]node_modules[\\/]/,
                 name: "vendors",
                 chunks: "all"
             }
-        }
+        },
+        //. concatenateModules 옵션은 ModuleConcatenationPlugin을 계승합니다.
+        concatenateModules: true,
     }
 }
