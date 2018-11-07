@@ -9,60 +9,59 @@
   margin: 0;
   padding: 0;
 }
-
-/************************************************************************************
- Checkbox
-************************************************************************************/
-.evui-checkbox{
-  display: inline-block;
+body{
+  width:960px;
+  margin:10px auto;
+}
+circle{
+  fill:white;
+  stroke:steelblue;
+  stroke-width:2px;
+}
+line{
+  stroke:grey;
+  stroke-width:3px;
+}
+.incRect{
+  stroke:grey;
+  shape-rendering:crispEdges;
+}
+#incMatx text{
+  text-anchor:middle;
+  cursor:default;
+}
+#treesvg g text:hover, #treesvg g circle:hover{
+  cursor:pointer;
+}
+#navdiv{
+  background:#555;
+}
+#treesvg{
+  border:1px solid grey;
+}
+#labelpos{
+  color:white;
+}
+#navdiv button, #navdiv textarea{
+  vertical-align:middle;
+}
+#g_labels text{
+  text-anchor:middle;
+}
+#g_elabels text{
+  text-anchor:middle;
+  fill:red;
+  font-weight:bold;
 }
 
-.evui-checkbox input[type=checkbox]{
-  display: none;
+.axis path,
+.axis line{
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
 }
 
-.evui-checkbox input[type=checkbox]+label{
-  display: inline-block;
-  position: relative;
-  padding-left: 25px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.evui-checkbox.evui-diabled input[type=checkbox]+label{
-  color: #c1c1c1;
-  cursor: not-allowed;
-}
-
-div.evui-checkbox.evui-diabled input[type=checkbox]+label:before{
-  background-color: #c1c1c1;
-}
-
-.evui-checkbox input[type=checkbox]+label:before{
-  content:"";
-  display: inline-block;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-  background-color: #ccc;
-  border-radius: 4px;
-  font-size: 13px;
-  text-aligh: center;
-  text-indent: 2px;
-  line-height: 15px;
-}
-
-.evui-checkbox input[type=checkbox]:hover + label:before{
-  content: "\2713";
-  color: #ddd;
-}
-
-.evui-checkbox input[type=checkbox]:checked+label:before{
-  content: "\2713";
-  color: #fff;
-  background: #2f87c1;
-  font-weight: 800;
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
 }

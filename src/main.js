@@ -1,3 +1,10 @@
-import('./test_lodash')
-import('./test_lodash2')
-console.log('첫 js 파일 로딩');
+import chartDot from "./example01";
+import {DataSet} from "./data/data";
+import * as d3 from "d3";
+
+let moveY;
+const drawCircle = () => {
+    let chart01 = new chartDot();
+};
+
+drawCircle();

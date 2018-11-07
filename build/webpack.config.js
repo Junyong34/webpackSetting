@@ -2,6 +2,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     // webpack4부터 mode가 존재 production development 두개로 환경 셋팅 가능
@@ -56,7 +57,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(["dist"], {
-            root: path.resolve(__dirname, "..")
+            root: path.join(__dirname, "..")
         }),
         // 엔트리 포인트 중 하나의 모듈의 이름을 변경하거나 새로운 것을 추가하는 경우 생성된 번들은 빌드에서 이름이
         // 변경되지만 index.html에 script는 여전히 이전의 이름을 참조한다.그렇게 때문에 우리는 주기적으로
@@ -70,7 +71,8 @@ module.exports = {
             template: path.join(__dirname, "../example/index.html"),  //템플릿 파일 이름
             // chunks 속성은 잘모름..
             // chunks: ['css', 'index', 'app', 'system', 'monitor']
-        })
+        }),
+        // new BundleAnalyzerPlugin()
     ],
     // webpack4 최적화 관련 플러그인이 모두 optimization 속송으로 통합됨
     // commonsChunkPlugin도 사라지고 이쪽으로 통합됨
